@@ -1,5 +1,6 @@
 package springmvc.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,8 +18,8 @@ import springmvc.controller.ListToStringConverter;
 public class User {
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", username=" + username + ", password=" + password
-				+ ", courses=" + courses + "]";
+		return "User [id=" + id + ", email=" + email + ", username=" + username + ", password=" + password + ", date="
+				+ date + ", courses=" + courses + "]";
 	}
 	public String getEmail() {
 		return email;
@@ -47,6 +48,13 @@ public class User {
 		this.courses = courses;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -54,9 +62,9 @@ public class User {
 	private String username;
 	private String password;
 	
+	private Date date;
 	
 	@Convert(converter = ListToStringConverter.class)
 	@Column(name="courses")
 	private List<String> courses;
-	
 }

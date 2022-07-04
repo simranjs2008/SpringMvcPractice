@@ -7,7 +7,7 @@
 <title>Success!!</title>
 </head>
 <body>
-	<h1>Welcome, ${model.username}</h1>
-	<h2>${model.email}</h2>
+	<h1>Welcome, ${user.username}</h1>
+	<h2>${user.email}</h2>
 </body>
 </html>

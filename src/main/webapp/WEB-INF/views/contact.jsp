@@ -16,8 +16,11 @@
 				for="username">user name</label> <input type="text" id="username"
 				name="username"><br> <br> <label for="password">password</label>
 			<input type="password" id="password" name="password"><br>
-			<br> <label for="courses">Choose courses:</label> <select name="courses"
-				id="courses" multiple>
+			<br> <label
+				for="date">date</label> <input type="text" placeholder="dd/mm/yyyy" id="date"
+				name="date"><br>
+			<br> <label for="courses">Choose courses:</label> <select
+				name="courses" id="courses" multiple>
 				<option value="maths">Maths</option>
 				<option value="science">Science</option>
 				<option value="eco">Eco</option>

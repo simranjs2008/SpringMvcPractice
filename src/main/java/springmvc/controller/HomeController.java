@@ -32,7 +32,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path="/processform", method=RequestMethod.POST)
-	public String submitFormPage(@ModelAttribute("model") User user) {
+	public String submitFormPage(@ModelAttribute("user") User user) {
 		if(!user.getPassword().equals("password")) {
 			return "redirect:/contact";
 		}
