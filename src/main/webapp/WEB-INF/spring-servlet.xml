@@ -16,6 +16,8 @@
 
 	<mvc:annotation-driven validator="myBeansValidator" />
 	
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
+	
 	<context:component-scan base-package="springmvc" />
    
    <!--<bean id = "contactValidator" class = "springmvc.controller.ContactValidator" />-->
