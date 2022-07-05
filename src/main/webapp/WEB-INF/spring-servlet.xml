@@ -18,8 +18,17 @@
 	
 	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/processform"/>
+			<bean class="springmvc.interceptor.HomeInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<context:component-scan base-package="springmvc" />
    
+   
+   <bean name="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
    <!--<bean id = "contactValidator" class = "springmvc.controller.ContactValidator" />-->
    	<bean id="myBeansValidator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 

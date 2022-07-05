@@ -51,7 +51,7 @@ public class HomeController {
 	public String submitFormPage(@ModelAttribute("user") @Valid User user, BindingResult result) {
 		System.out.println("result checking1: "+ result);
 		//for exception
-		throw new NullPointerException();
+		//throw new NullPointerException();
 		/**/
 		if(result.hasErrors()) {
 			System.out.println("got error: " + result);
