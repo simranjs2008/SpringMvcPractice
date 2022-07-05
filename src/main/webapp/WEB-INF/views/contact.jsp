@@ -1,32 +1,70 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
 </head>
+<style>
+      .error {
+         color: #ff0000;
+      }
+
+      .errorblock {
+         color: #000;
+         background-color: #ffEEEE;
+         border: 3px solid #ff0000;
+         padding: 8px;
+         margin: 16px;
+      }
+   </style>
 <body>
 
 	<div>
 		<h1>Fill in contact Details</h1>
-		<form action="processform" method="post">
-			<label for="email">email Address</label> <input type="email"
-				id="email" name="email"><br> <br> <label
-				for="username">user name</label> <input type="text" id="username"
-				name="username"><br> <br> <label for="password">password</label>
-			<input type="password" id="password" name="password"><br>
-			<br> <label
-				for="date">date</label> <input type="text" placeholder="dd/mm/yyyy" id="date"
-				name="date"><br>
-			<br> <label for="courses">Choose courses:</label> <select
-				name="courses" id="courses" multiple>
-				<option value="maths">Maths</option>
-				<option value="science">Science</option>
-				<option value="eco">Eco</option>
-				<option value="hindi">Hindi</option>
-			</select> <br> <input type="submit" value="Submit">
-		</form>
+
+		<form:form action="processform" modelAttribute="user" method="post">
+
+            Email:
+            <form:input path="email" />
+            <form:errors path="email" cssClass="error" />
+
+			<br>
+			<br> user name:
+            <form:input path="username" />
+			<form:errors path="username" cssClass="error" />
+
+			<br>
+			<br> Password (*):
+            <form:input path="password" />
+			<form:errors path="password" cssClass="error" />
+
+			<br>
+			<br> courses:
+            <form:select path="courses" >
+				<form:option value="maths"></form:option>
+				<form:option value="science"></form:option>
+				<form:option value="Hindi"></form:option>
+			</form:select>
+			<form:errors path="courses" cssClass="text-danger" />
+			
+			<br>
+			<br> Address street:
+            <form:input path="address.street" />
+			<form:errors path="address.street" cssClass="error" />
+			
+			<br>
+			<br> Address city:
+            <form:input path="address.city" />
+			<form:errors path="address.city" cssClass="error" />
+
+			<br>
+			<br>
+
+			<input type="submit" value="Submit" />
+
+		</form:form>
 	</div>
 </body>
 </html>
