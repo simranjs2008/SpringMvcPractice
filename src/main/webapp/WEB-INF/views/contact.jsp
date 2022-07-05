@@ -25,7 +25,7 @@
       }
    </style>
 <body>
-
+	<img src="<c:url value="/resources/images/200x200.jpg"/>">
 	<div>
 		<h1>Fill in contact Details</h1>
 
